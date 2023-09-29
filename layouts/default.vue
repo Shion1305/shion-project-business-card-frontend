@@ -14,5 +14,6 @@ body {
         linear-gradient(rgba(17, 22, 105, 0.07), rgba(8, 9, 70, 0.5));
   background-blend-mode: screen;
   color: white;
+  font-family: 'Noto Sans JP', sans-serif;
 }
 </style>
