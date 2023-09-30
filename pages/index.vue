@@ -19,6 +19,7 @@
 .page-root {
   display: flex;
   flex-direction: column;
+  padding-bottom: 4em;
 }
 
 .sns-area {

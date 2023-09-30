@@ -57,6 +57,7 @@ import ProfileImage from "~/components/ProfileImage.vue";
 }
 
 .status {
+  width: min(90vw, 17em);
   display: flex;
   flex-direction: column;
   gap: 0.5em;
@@ -104,7 +105,6 @@ import ProfileImage from "~/components/ProfileImage.vue";
 }
 
 .profile {
-  width: fit-content;
   padding: 1em;
   display: flex;
   flex-direction: column;
