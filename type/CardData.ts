@@ -2,6 +2,6 @@ export default interface CardData {
   id: string;
   recipient?: string;
   version: string;
-  exchangedDate?: string;
+  exchangeDate?: string;
   eventID?: string;
 }
