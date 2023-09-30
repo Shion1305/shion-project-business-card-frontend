@@ -1,7 +1,10 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import ProfileImage from "~/components/ProfileImage.vue";
+</script>
 
 <template>
   <div class="profile">
+    <ProfileImage />
     <div class="name">
       <h2 class="jp">市川 詩恩</h2>
       <p class="en">Shion Ichikawa</p>
@@ -32,6 +35,10 @@
 </template>
 
 <style scoped>
+.profile-image {
+  margin: 10px;
+}
+
 .name {
   text-align: center;
 
