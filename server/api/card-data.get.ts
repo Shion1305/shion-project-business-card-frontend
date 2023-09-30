@@ -30,6 +30,7 @@ export default defineEventHandler(async (event) => {
     resp.event.id = eventData.id;
     resp.event.name = eventData.name;
     resp.event.description = eventData.description;
+    resp.event.place = eventData.place;
     resp.event.date = eventData.date;
     resp.event.time = eventData.time;
   }
