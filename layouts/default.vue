@@ -7,6 +7,9 @@
 </template>
 
 <style>
+html {
+  font-size: min(1.3em, 5vw);
+}
 body {
   width: 100lvw;
   height: 100lvh;

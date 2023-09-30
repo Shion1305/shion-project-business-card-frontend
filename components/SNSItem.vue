@@ -130,7 +130,6 @@ const iconStyle = computed(() => {
   padding: 0.5rem;
   margin: 0.5rem;
   color: white;
-  font-size: 1.2rem;
   gap: 0.3em;
 
   > img {
@@ -143,7 +142,7 @@ const iconStyle = computed(() => {
     margin-left: 0.3rem;
     color: white;
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1.15rem;
   }
 }
 </style>

@@ -109,7 +109,6 @@ import ProfileImage from "~/components/ProfileImage.vue";
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: min(1.3em, 5vw);
   align-self: center;
 }
 </style>
