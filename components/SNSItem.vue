@@ -1,4 +1,7 @@
 <script lang="ts" setup>
+import { google } from "google-gax/build/protos/compute_operations";
+import compute = google.cloud.compute;
+
 const props = defineProps<{
   snsType:
     | "x"
@@ -14,6 +17,7 @@ const snsData = computed(
   (): {
     backgroundColor: string;
     icon: string;
+    iconBackground?: string;
     snsID: string;
     snsUrl: string;
   } => {
@@ -21,14 +25,14 @@ const snsData = computed(
       case "github":
         return {
           icon: "/img/sns/github.webp",
-          backgroundColor: "#333",
+          backgroundColor: "#171515",
           snsID: "shion1305",
           snsUrl: "https://github.com/shion1305",
         };
       case "x":
         return {
           icon: "/img/sns/x.webp",
-          backgroundColor: "#333",
+          backgroundColor: "#000",
           snsID: "@shion2021_",
           snsUrl: "https://twitter.com/shion2021_",
         };
@@ -49,7 +53,8 @@ const snsData = computed(
       case "gmail":
         return {
           icon: "/img/sns/gmail.png",
-          backgroundColor: "#d44638",
+          backgroundColor: "#df4e3c",
+          iconBackground: "#fff",
           snsID: "shion1305@gmail.com",
           snsUrl: "mailto:shion1305@gmail.com",
         };
@@ -95,11 +100,21 @@ const parentStyle = computed(() => {
     background: snsData.value.backgroundColor,
   };
 });
+
+const iconStyle = computed(() => {
+  if (snsData.value.iconBackground) {
+    return {
+      background: snsData.value.iconBackground,
+      "border-radius": "10%",
+    };
+  }
+  return {};
+});
 </script>
 
 <template>
   <div :style="parentStyle" class="sns-item">
-    <img :src="snsData.icon" />
+    <img :src="snsData.icon" :style="iconStyle" />
     <a :href="snsData.snsUrl" rel="noopener noreferrer" target="_blank">
       {{ snsData.snsID }}
     </a>
@@ -125,7 +140,7 @@ const parentStyle = computed(() => {
   }
 
   > a {
-    margin-left: 0.5rem;
+    margin-left: 0.3rem;
     color: white;
     text-decoration: none;
     font-size: 1.2rem;
