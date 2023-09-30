@@ -63,6 +63,7 @@ const cardInfo: CardInfo | null = await useFetch(`/api/card-data?id=${id}`)
   flex-wrap: wrap;
   justify-content: center;
   margin: 0 auto;
+  max-width: 40rem;
 }
 
 .sns-item {
