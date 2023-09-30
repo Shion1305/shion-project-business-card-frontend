@@ -1,7 +1,4 @@
 <script lang="ts" setup>
-import { google } from "google-gax/build/protos/compute_operations";
-import compute = google.cloud.compute;
-
 const props = defineProps<{
   snsType:
     | "x"
