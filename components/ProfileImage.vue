@@ -10,7 +10,7 @@
 
 <style scoped>
 .profile-image {
-  width: min(200px, 40vw);
+  width: min(150px, 40vw);
   border-radius: 50%;
   border: 1px solid white;
   aspect-ratio: 1;
