@@ -20,11 +20,21 @@ const cardInfo: CardInfo | null = await useFetch(`/api/card-data?id=${id}`)
         <p class="exchange-date">
           {{ cardInfo.exchangeDate }}
         </p>
-        <div v-if="cardInfo.event">
-          <h2>イベント情報</h2>
-          <p>イベント名: {{ cardInfo.event.name }}</p>
-          <p v-show="cardInfo.event.date">{{ cardInfo.event.date }}</p>
-          <p v-show="cardInfo.event.time">{{ cardInfo.event.time }}</p>
+        <div class="event-area" v-if="cardInfo.event">
+          <hr />
+          <p class="name">{{ cardInfo.event.name }}</p>
+          <p class="desc" v-show="cardInfo.event.description">
+            {{ cardInfo.event.description }}
+          </p>
+          <p class="place" v-show="cardInfo.event.place">
+            {{ cardInfo.event.place }}
+          </p>
+          <p class="date" v-show="cardInfo.event.date">
+            {{ cardInfo.event.date }}
+          </p>
+          <p class="time" v-show="cardInfo.event.time">
+            {{ cardInfo.event.time }}
+          </p>
         </div>
       </div>
     </div>
@@ -72,6 +82,27 @@ const cardInfo: CardInfo | null = await useFetch(`/api/card-data?id=${id}`)
     font-size: 1.5em;
     font-weight: bold;
     margin: 0.4em 1em;
+  }
+
+  .event-area {
+    .name {
+      margin: 1em 0 0.5em;
+    }
+    .desc {
+      font-size: 0.8em;
+      margin: 0 0 0.4em 0;
+    }
+    .place {
+      margin: 1em 0;
+    }
+    .date {
+      margin: 1em 0 0.2em 0;
+      font-size: 1.2em;
+    }
+    .time {
+      margin: 0 0 0.4em 0;
+      font-size: 1.2em;
+    }
   }
 }
 </style>
