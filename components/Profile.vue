@@ -11,16 +11,14 @@ import ProfileImage from "~/components/ProfileImage.vue";
     </div>
     <div class="status">
       <div class="main">
-        <p>横浜国立大学(YNU)</p>
-        <p>理工学部数物電子情報系学科</p>
-        <p>情報工学EP 学部3年</p>
+        <p>横浜国立大学 大学院</p>
+        <p>環境情報学府 修士1年</p>
       </div>
       <hr />
       <ul>
-        <li>横浜国立大学&nbsp;吉岡研究室</li>
         <li>
-          <span>Settlementチーム</span>
-          <span>@メルカリ・メルペイ</span>
+          <span>GenerativeAI活用インターン</span>
+          <span>Drecom Co.,Ltd.</span>
         </li>
         <li>
           <span>金融チーム</span>
