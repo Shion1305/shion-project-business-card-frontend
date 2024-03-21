@@ -3,9 +3,13 @@ import * as fs from "fs";
 
 const config = useRuntimeConfig();
 // read json file from FileSystem and parse it as json object
-const credential = JSON.parse(fs.readFileSync(config.gcp.certPath, "utf8"));
-admin.initializeApp({
-  credential: admin.credential.cert(credential as admin.ServiceAccount),
-});
+if (config.gcp.certPath) {
+  const credential = JSON.parse(fs.readFileSync(config.gcp.certPath, "utf8"));
+  admin.initializeApp({
+    credential: admin.credential.cert(credential as admin.ServiceAccount),
+  });
+} else {
+  admin.initializeApp();
+}
 
 export default admin;

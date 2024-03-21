@@ -14,7 +14,6 @@ export default defineNuxtConfig({
   runtimeConfig: {
     gcp: {
       certPath: process.env.GCP_CERT_PATH,
-      projectID: process.env.GCP_PROJECT_ID,
     },
   },
   modules: ["@nuxtjs/google-fonts"],
