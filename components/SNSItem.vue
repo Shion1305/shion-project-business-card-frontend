@@ -30,8 +30,8 @@ const snsData = computed(
         return {
           icon: "/img/sns/x.webp",
           backgroundColor: "#000",
-          snsID: "@shion2021_",
-          snsUrl: "https://twitter.com/shion2021_",
+          snsID: "@shion1305",
+          snsUrl: "https://twitter.com/shion1305",
         };
       case "wantedly":
         return {
@@ -66,7 +66,7 @@ const snsData = computed(
         return {
           icon: "/img/sns/discord.png",
           backgroundColor: "#7289da",
-          snsID: "shion1305",
+          snsID: "Shion1305",
           snsUrl: "https://discordapp.com/users/706873888461684866",
         };
     }
