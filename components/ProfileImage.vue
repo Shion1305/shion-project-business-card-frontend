@@ -2,7 +2,7 @@
 
 <template>
   <img
-    src="@/assets/img/shion-profile.webp"
+    src="@/assets/img/shion-202402.webp"
     alt="Shion's Ski Profile Image"
     class="profile-image"
   />
