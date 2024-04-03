@@ -4,7 +4,7 @@ import ProfileImage from "~/components/ProfileImage.vue";
 
 <template>
   <div class="profile">
-    <ProfileImage />
+    <ProfileImage/>
     <div class="name">
       <h2 class="jp">市川 詩恩</h2>
       <p class="en">Shion Ichikawa</p>
@@ -14,8 +14,13 @@ import ProfileImage from "~/components/ProfileImage.vue";
         <p>横浜国立大学 大学院</p>
         <p>環境情報学府 修士1年</p>
       </div>
-      <hr />
+      <hr/>
       <ul>
+        <li>
+          <span>Flatt Security</span>
+          <span>プロフェッショナル事業部</span>
+          <span>脆弱性診断業務インターン</span>
+        </li>
         <li>
           <span>GenerativeAI活用インターン</span>
           <span>Drecom Co.,Ltd.</span>
