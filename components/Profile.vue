@@ -13,6 +13,7 @@ import ProfileImage from "~/components/ProfileImage.vue";
       <div class="main">
         <p>横浜国立大学 大学院</p>
         <p>環境情報学府 修士1年</p>
+        <p>情報安全確保支援士</p>
       </div>
       <hr/>
       <ul>
