@@ -18,20 +18,23 @@ import ProfileImage from "~/components/ProfileImage.vue";
       <hr/>
       <ul>
         <li>
+          <span>Google Developer Student Club</span>
+          <span>YNU支部Lead</span>
+        </li>
+        <li>
+          <span>バックエンドエンジニアインターン</span>
+          <span>株式会社エス・エム・エス</span>
+        </li>
+        <li>
           <span>Flatt Security</span>
           <span>プロフェッショナル事業部</span>
           <span>脆弱性診断業務インターン</span>
         </li>
         <li>
-          <span>GenerativeAI活用インターン</span>
-          <span>Drecom Co.,Ltd.</span>
-        </li>
-        <li>
           <span>金融チーム</span>
           <span>@東京大学松尾研究室</span>
         </li>
-        <li>開発インターン@Poetics</li>
-        <li>YNU大学祭実行委員会技術部局長</li>
+        <li>YNU大学祭実行委員会技術部局</li>
         <li>Lumos&nbsp;<sub>(プログラミングサークル)</sub></li>
       </ul>
     </div>
