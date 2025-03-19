@@ -1,76 +1,76 @@
 <script lang="ts" setup>
 const props = defineProps<{
   snsType:
-    | "x"
-    | "github"
-    | "gmail"
-    | "line"
-    | "linkedin"
-    | "wantedly"
-    | "discord";
+      | "x"
+      | "github"
+      | "gmail"
+      | "line"
+      | "linkedin"
+      | "wantedly"
+      | "discord";
 }>();
 
 const snsData = computed(
-  (): {
-    backgroundColor: string;
-    icon: string;
-    iconBackground?: string;
-    snsID: string;
-    snsUrl: string;
-  } => {
-    switch (props.snsType) {
-      case "github":
-        return {
-          icon: "/img/sns/github.webp",
-          backgroundColor: "#171515",
-          snsID: "shion1305",
-          snsUrl: "https://github.com/shion1305",
-        };
-      case "x":
-        return {
-          icon: "/img/sns/x.webp",
-          backgroundColor: "#000",
-          snsID: "@shion1305",
-          snsUrl: "https://twitter.com/shion1305",
-        };
-      case "wantedly":
-        return {
-          icon: "/img/sns/wantedly.webp",
-          backgroundColor: "#4cbbd9",
-          snsID: "shion1305",
-          snsUrl: "https://www.wantedly.com/id/shion1305",
-        };
-      case "linkedin":
-        return {
-          icon: "/img/sns/linked-in.webp",
-          backgroundColor: "#0077b5",
-          snsID: "shion1305",
-          snsUrl: "https://linkedin.com/in/shion1305",
-        };
-      case "gmail":
-        return {
-          icon: "/img/sns/gmail.png",
-          backgroundColor: "#df4e3c",
-          iconBackground: "#fff",
-          snsID: "shion1305@gmail.com",
-          snsUrl: "mailto:shion1305@gmail.com",
-        };
-      case "line":
-        return {
-          icon: "/img/sns/line.webp",
-          backgroundColor: "#06C755",
-          snsID: "id: shion1305",
-          snsUrl: "https://line.me/ti/p/D-rzZO0PKQ",
-        };
-      case "discord":
-        return {
-          icon: "/img/sns/discord.png",
-          backgroundColor: "#7289da",
-          snsID: "Shion1305",
-          snsUrl: "https://discordapp.com/users/706873888461684866",
-        };
-    }
-  },
+    (): {
+      backgroundColor: string;
+      icon: string;
+      iconBackground?: string;
+      snsID: string;
+      snsUrl: string;
+    } => {
+      switch (props.snsType) {
+        case "github":
+          return {
+            icon: "/img/sns/github.webp",
+            backgroundColor: "#171515",
+            snsID: "shion1305",
+            snsUrl: "https://github.com/Shion1305",
+          };
+        case "x":
+          return {
+            icon: "/img/sns/x.webp",
+            backgroundColor: "#000",
+            snsID: "@shion1305",
+            snsUrl: "https://twitter.com/shion1305",
+          };
+        case "wantedly":
+          return {
+            icon: "/img/sns/wantedly.webp",
+            backgroundColor: "#4cbbd9",
+            snsID: "shion1305",
+            snsUrl: "https://www.wantedly.com/id/shion1305",
+          };
+        case "linkedin":
+          return {
+            icon: "/img/sns/linked-in.webp",
+            backgroundColor: "#0077b5",
+            snsID: "shion1305",
+            snsUrl: "https://linkedin.com/in/shion1305",
+          };
+        case "gmail":
+          return {
+            icon: "/img/sns/gmail.png",
+            backgroundColor: "#df4e3c",
+            iconBackground: "#fff",
+            snsID: "shion1305@gmail.com",
+            snsUrl: "mailto:shion1305@gmail.com",
+          };
+        case "line":
+          return {
+            icon: "/img/sns/line.webp",
+            backgroundColor: "#06C755",
+            snsID: "id: shion1305",
+            snsUrl: "https://line.me/ti/p/D-rzZO0PKQ",
+          };
+        case "discord":
+          return {
+            icon: "/img/sns/discord.png",
+            backgroundColor: "#7289da",
+            snsID: "Shion1305",
+            snsUrl: "https://discordapp.com/users/706873888461684866",
+          };
+      }
+    },
 );
 
 const icon = computed(() => {
@@ -110,12 +110,12 @@ const iconStyle = computed(() => {
 </script>
 
 <template>
-  <div :style="parentStyle" class="sns-item">
-    <img :src="snsData.icon" :style="iconStyle" />
-    <a :href="snsData.snsUrl" rel="noopener noreferrer" target="_blank">
+  <a :href="snsData.snsUrl" :style="parentStyle" class="sns-item">
+    <img :src="snsData.icon" :style="iconStyle"/>
+    <div rel="noopener noreferrer" target="_blank">
       {{ snsData.snsID }}
-    </a>
-  </div>
+    </div>
+  </a>
 </template>
 
 <style scoped>
@@ -125,9 +125,12 @@ const iconStyle = computed(() => {
   justify-content: center;
   border-radius: 0.5rem;
   padding: 0.5rem;
-  margin: 0.5rem;
   color: white;
   gap: 0.3em;
+  font-size: 1.15rem;
+  text-decoration: none;
+  width: 300px;
+  height: 50px;
 
   > img {
     width: 40px;
@@ -135,11 +138,9 @@ const iconStyle = computed(() => {
     object-fit: contain;
   }
 
-  > a {
+  > div {
     margin-left: 0.3rem;
     color: white;
-    text-decoration: none;
-    font-size: 1.15rem;
   }
 }
 </style>

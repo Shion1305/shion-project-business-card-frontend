@@ -1,8 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: false },
+
   app: {
     head: {
+      title: "Shion Ichikawa Business Card LP",
       link: [
         {
           rel: "stylesheet",
@@ -11,12 +13,15 @@ export default defineNuxtConfig({
       ],
     },
   },
+
   runtimeConfig: {
     gcp: {
       certPath: process.env.GCP_CERT_PATH,
     },
   },
+
   modules: ["@nuxtjs/google-fonts"],
+
   googleFonts: {
     families: {
       "Noto+Sans+JP": true,
@@ -24,4 +29,6 @@ export default defineNuxtConfig({
       "Klee+One": true,
     },
   },
+
+  compatibilityDate: "2025-03-19",
 });
