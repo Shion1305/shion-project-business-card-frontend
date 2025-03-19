@@ -2,15 +2,15 @@
 
 <template>
   <div class="page-root">
-    <Profile />
+    <Profile/>
     <div class="sns-area">
-      <SNSItem snsType="github" />
-      <SNSItem snsType="x" />
-      <SNSItem snsType="linkedin" />
-      <SNSItem snsType="discord" />
-      <SNSItem snsType="wantedly" />
-      <SNSItem snsType="line" />
-      <SNSItem snsType="gmail" />
+      <SNSItem snsType="github"/>
+      <SNSItem snsType="x"/>
+      <SNSItem snsType="linkedin"/>
+      <SNSItem snsType="discord"/>
+      <SNSItem snsType="wantedly"/>
+      <SNSItem snsType="line"/>
+      <SNSItem snsType="gmail"/>
     </div>
   </div>
 </template>
@@ -28,10 +28,7 @@
   justify-content: center;
   max-width: 40rem;
   margin: 0 auto;
+  gap: 0.5rem;
 }
 
-.sns-item {
-  width: 300px;
-  height: 50px;
-}
 </style>

@@ -125,11 +125,12 @@ const iconStyle = computed(() => {
   justify-content: center;
   border-radius: 0.5rem;
   padding: 0.5rem;
-  margin: 0.5rem;
   color: white;
   gap: 0.3em;
   font-size: 1.15rem;
   text-decoration: none;
+  width: 300px;
+  height: 50px;
 
   > img {
     width: 40px;
