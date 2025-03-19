@@ -15,7 +15,7 @@
     "@nuxtjs/google-fonts": "^3.2.0",
     "firebase-admin": "^11.11.1",
     "nuxt": "^3.16.0",
-    "prettier": "3.0.3",
+    "prettier": "3.5.3",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
   }
