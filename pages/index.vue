@@ -5,12 +5,12 @@
     <Profile />
     <div class="sns-area">
       <SNSItem snsType="github" />
-      <SNSItem snsType="gmail" />
       <SNSItem snsType="x" />
-      <SNSItem snsType="discord" />
-      <SNSItem snsType="line" />
-      <SNSItem snsType="wantedly" />
       <SNSItem snsType="linkedin" />
+      <SNSItem snsType="discord" />
+      <SNSItem snsType="wantedly" />
+      <SNSItem snsType="line" />
+      <SNSItem snsType="gmail" />
     </div>
   </div>
 </template>
