@@ -13,29 +13,23 @@ import ProfileImage from "~/components/ProfileImage.vue";
       <div class="main">
         <p>横浜国立大学 大学院</p>
         <p>環境情報学府 修士1年</p>
-        <p>情報安全確保支援士</p>
       </div>
       <hr/>
       <ul>
         <li>
-          <span>Google Developer Student Club</span>
+          <span>Software Engineer Intern</span>
+          <span>&nbsp;@Apple</span>
+        </li>
+        <li>
+          <span>Google Developer Groups on Campus</span>
           <span>YNU支部Lead</span>
         </li>
         <li>
-          <span>バックエンドエンジニアインターン</span>
-          <span>株式会社エス・エム・エス</span>
-        </li>
-        <li>
-          <span>Flatt Security</span>
-          <span>プロフェッショナル事業部</span>
-          <span>脆弱性診断業務インターン</span>
-        </li>
-        <li>
           <span>金融チーム</span>
-          <span>@東京大学松尾研究室</span>
+          <span>&nbsp;@東京大学松尾研究室</span>
         </li>
-        <li>YNU大学祭実行委員会技術部局</li>
         <li>Lumos&nbsp;<sub>(プログラミングサークル)</sub></li>
+        <li><sub>情報安全確保支援士</sub></li>
       </ul>
     </div>
   </div>
