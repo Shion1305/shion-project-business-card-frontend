@@ -4,6 +4,7 @@ export default defineNuxtConfig({
 
   app: {
     head: {
+      title: "Shion Ichikawa Business Card LP",
       link: [
         {
           rel: "stylesheet",
