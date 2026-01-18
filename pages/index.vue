@@ -1,16 +1,12 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { SNS_ORDER } from "~/type/sns";
+</script>
 
 <template>
   <div class="page-root">
-    <Profile/>
+    <Profile />
     <div class="sns-area">
-      <SNSItem snsType="github"/>
-      <SNSItem snsType="x"/>
-      <SNSItem snsType="linkedin"/>
-      <SNSItem snsType="discord"/>
-      <SNSItem snsType="wantedly"/>
-      <SNSItem snsType="line"/>
-      <SNSItem snsType="gmail"/>
+      <SNSItem v-for="type in SNS_ORDER" :key="type" :sns-type="type" />
     </div>
   </div>
 </template>
@@ -30,5 +26,4 @@
   margin: 0 auto;
   gap: 0.5rem;
 }
-
 </style>
