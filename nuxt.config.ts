@@ -18,6 +18,13 @@ export default defineNuxtConfig({
     gcp: {
       certPath: process.env.GCP_CERT_PATH,
     },
+    line: {
+      channelId: "",
+      channelSecret: "",
+      callbackUrl: "",
+      adminUserIds: "",
+    },
+    sessionSecret: "",
   },
 
   modules: ["@nuxtjs/google-fonts"],
