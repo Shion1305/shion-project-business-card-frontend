@@ -20,6 +20,7 @@ export default defineEventHandler(async (event) => {
     return sendError(event, new Error("card not found"));
   }
   resp.id = cardID;
+  resp.recipient = cardData.recipient;
   resp.exchangeDate = cardData.exchangeDate;
   if (cardData.eventID) {
     const eventData = await getEventData(cardData.eventID);

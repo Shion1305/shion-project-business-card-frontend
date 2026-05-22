@@ -1,5 +1,5 @@
 import crypto from "node:crypto";
-import { createRemoteJWKSet, jwtVerify } from "jose";
+import { createRemoteJWKSet, decodeProtectedHeader, jwtVerify } from "jose";
 import type { H3Event } from "h3";
 
 const LINE_AUTHORIZE_URL = "https://access.line.me/oauth2/v2.1/authorize";
@@ -12,7 +12,12 @@ const NONCE_COOKIE = "line_oauth_nonce";
 
 let jwksCache: ReturnType<typeof createRemoteJWKSet> | null = null;
 function getJwks() {
-  if (!jwksCache) jwksCache = createRemoteJWKSet(new URL(LINE_JWKS_URL));
+  if (!jwksCache) {
+    jwksCache = createRemoteJWKSet(new URL(LINE_JWKS_URL), {
+      cacheMaxAge: 60 * 60 * 1000,
+      cooldownDuration: 30 * 1000,
+    });
+  }
   return jwksCache;
 }
 
@@ -94,10 +99,34 @@ export interface LineIdTokenClaims {
 
 export async function verifyIdToken(idToken: string, expectedNonce: string | null): Promise<LineIdTokenClaims> {
   const cfg = lineConfig();
-  const { payload } = await jwtVerify(idToken, getJwks(), {
-    issuer: LINE_ISSUER,
-    audience: cfg.channelId,
-  });
+  const expectedAud = String(cfg.channelId);
+  const header = decodeProtectedHeader(idToken);
+  const alg = header.alg;
+
+  // Verify signature + iss + exp only via jose; audience is checked manually
+  // below to avoid jose's strict type handling of the audience option.
+  const verifyOptions = { issuer: LINE_ISSUER };
+  let payload: Record<string, unknown>;
+  if (alg === "HS256") {
+    const secret = new TextEncoder().encode(cfg.channelSecret);
+    ({ payload } = await jwtVerify(idToken, secret, {
+      ...verifyOptions,
+      algorithms: ["HS256"],
+    }));
+  } else if (alg === "ES256") {
+    ({ payload } = await jwtVerify(idToken, getJwks(), {
+      ...verifyOptions,
+      algorithms: ["ES256"],
+    }));
+  } else {
+    throw createError({ statusCode: 401, statusMessage: `unsupported id_token alg: ${alg}` });
+  }
+
+  const aud = payload.aud;
+  const audMatches = Array.isArray(aud) ? aud.includes(expectedAud) : aud === expectedAud;
+  if (!audMatches) {
+    throw createError({ statusCode: 401, statusMessage: "audience mismatch" });
+  }
   if (expectedNonce && payload.nonce !== expectedNonce) {
     throw createError({ statusCode: 401, statusMessage: "nonce mismatch" });
   }
