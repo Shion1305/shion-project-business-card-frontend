@@ -19,8 +19,6 @@ jobs:
         uses: actions/checkout@v6
 
       - uses: pnpm/action-setup@v5
-        with:
-          version: latest
 
       - name: Setup Node
         uses: actions/setup-node@v6
