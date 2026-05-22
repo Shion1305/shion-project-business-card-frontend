@@ -9,6 +9,7 @@ interface EventInfo {
 
 interface CardInfo {
   id: string;
+  recipient?: string;
   exchangeDate?: string;
   event?: EventInfo;
 }
