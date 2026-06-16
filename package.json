@@ -14,7 +14,7 @@
   "devDependencies": {
     "@nuxt/devtools": "^3.2.4",
     "@nuxtjs/google-fonts": "^3.2.0",
-    "firebase-admin": "^13.10.0",
+    "firebase-admin": "^14.0.0",
     "nuxt": "^4.4.6",
     "prettier": "3.8.3",
     "vue": "^3.5.35",
